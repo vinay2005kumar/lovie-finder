@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Finder</title>
+    <link rel="stylesheet" href="love.css">
+</head>
+<body>
+    <div class="background">
+        <img src="love.jpg" alt="" class="bg-img">
+        <div class="imgs">
+            <img src="love3.png" alt="" class="leaf" style="animation-delay: 1s; animation-duration: 10s;">
+            <img src="love4.png" alt="" class="leaf" style="animation-delay: 1s; animation-duration: 13s;">
+            <img src="love3.png" alt="" class="leaf" style="animation-delay: 0.4s; animation-duration:19s;">
+            <img src="love4.png" alt="" class="leaf" style="animation-delay: 2s; animation-duration: 10s;">
+            <img src="love3.png" alt="" class="leaf" style="animation-delay: 2.6s; animation-duration: 12s;">
+            <img src="love4.png" alt="" class="leaf" style="animation-delay: 0s; animation-duration: 16s;">
+            <img src="love3.png" alt="" class="leaf" style="animation-delay: 0.5s; animation-duration: 12s;">
+            <img src="love4.png" alt="" class="leaf" style="animation-delay: 0.8s; animation-duration: 15s;">
+            <img src="love3.png" alt="" class="leaf" style="animation-delay: 1s; animation-duration: 14s;">
+            <img src="love4.png" alt="" class="leaf" style="animation-delay: 1s; animation-duration: 12s;">
+            <img src="love3.png" alt="" class="leaf" style="animation-delay: 0.3s; animation-duration: 11s;">
+            <img src="love4.png" alt="" class="leaf" style="animation-delay: 1.2s; animation-duration: 16s;">
+            <img src="love3.png" alt="" class="leaf" style="animation-delay: 0.8s; animation-duration: 8s;">
+            <img src="love4.png" alt="" class="leaf" style="animation-delay: 0.9s; animation-duration: 12s;">
+        </div>
+        <form action="" id="form" onsubmit="fun(); return false;">
+            <div class="main">
+                <h1><pre>L💝VE FINDER</pre></h1>
+                <p class="suggestion">(your name should enter first)</p>
+                <div class="input">
+                    <label for="first" id="l1">Enter Your Name :</label>
+                    <input type="text" id="i1" name="name">
+                    <label for="second" id="l2">Your Crush Name :</label>
+                    <p id="sticker">💘</p>
+                    <input type="text" id="i2" name="crush">
+                    <button id="submit">FIND 🧡</button>
+                </div>
+                <div class="parent" id="p">
+                    <div class="child">
+                        <p id="n">0%<p id="stick">🖤</p></p>
+                    </div>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+    <script>
+        function fun(e) {
+            let form = document.getElementById("form");
+         
+            let name1 = document.getElementById("i1").value.toLowerCase().trim().replace(/\s+/g, '');
+            let name2 = document.getElementById("i2").value.toLowerCase().trim().replace(/\s+/g, '');
+            if (name1 == '' || name2 == '') {
+                alert('enter valid name');
+                return;
+            }
+            let a = name1.split('');
+            let b = name2.split('');
+            for (let i = 0; i < a.length; i++) {
+                for (let j = 0; j < b.length; j++) {
+                    if (a[i] == b[j]) {
+                        a.splice(i, 1);
+                        b.splice(j, 1);
+                    }
+                }
+            }
+            let a1 = a.length;
+            let b1 = b.length;
+            let count = a1 + b1;
+            let str1 = "flames";
+            let arr = str1.split('');
+            while (arr.length > 1) {
+                if (arr.length > 1) {
+                    let index = count % arr.length;
+                    arr.splice(index - 1, 1);
+                } else {
+                    break;
+                }
+            }
+            let rel = arr.join('');
+            let per = document.getElementById('p');
+            let v = document.getElementById('n');
+            v.style.fontSize='41px'
+            v.style.top='50px'
+            v.style.right='30px'
+            let stick = document.getElementById('stick');
+            stick.classList.add('heart')
+            stick.style.bottom='48px'
+            let num = 1;
+            switch (rel) {
+                case 'f': stick.innerHTML = '🩷'; percentage(50); break;
+                case 'l': stick.innerHTML = '💗'; percentage(90); break;
+                case 'a': stick.innerHTML = '❤️'; percentage(70); break;
+                case 'm': stick.innerHTML = '💖'; percentage(99.99); break;
+                case 'e': stick.innerHTML = '💛'; percentage(10); break;
+                case 's': stick.innerHTML = '❤️‍🩹'; percentage(40); break;
+            }
+            function percentage(a) {
+                let arg = a;
+                let intervalId = setInterval(() => {
+                    if (num < arg) {
+                        v.innerHTML = ++num + '%';
+                        let c = num * 3.6;
+                        per.style.background = `conic-gradient(red ${c}deg, white ${c}deg)`;
+                    } else {
+                        clearInterval(intervalId);
+                    }
+                }, 100);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,386 @@
+/* Base styles (unchanged) */
+body {
+    display: flex;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.background img {
+    width: 107%;
+    height: 114%;
+    position: absolute;
+    z-index: -5;
+    left: 0px;
+    top: -6em;
+    /* margin: 0 auto; */
+}
+
+.main {
+    width: 450px;
+    height: 400px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    text-align: center;
+    position: relative;
+    bottom: 10em;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    margin: auto;
+}
+
+input {
+    width: 250px;
+    height: 30px;
+    font-size: 21px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid pink;
+    outline: none;
+    color: pink;
+}
+
+#l1 {
+    position: absolute;
+    top: 170px;
+    left: 10px;
+}
+
+#l2 {
+    position: absolute;
+    left: 10px;
+    top: 260px;
+}
+
+label {
+    font-size: 21px;
+    color: pink;
+}
+
+pre {
+    font-size: 36px;
+    color: pink;
+}
+
+#i1 {
+    position: absolute;
+    right: 15px;
+    top: 165px;
+}
+
+#i2 {
+    position: absolute;
+    right: 15px;
+    top: 255px;
+}
+
+#submit {
+    width: 300px;
+    height: 50px;
+    position: relative;
+    top: 10em;
+    left:0em;
+    font-size: 21px;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(196, 55, 79);
+    backdrop-filter: blur(10px);
+    color: pink;
+    box-shadow: 1px 7px 1px rgb(148, 58, 73);
+}
+#submit:active {
+    transform: translateY(5px);
+    box-shadow: none;
+}
+
+.suggestion {
+    position: relative;
+    font-size: 16px;
+    color: violet;
+    bottom: 1em;
+}
+
+#sticker {
+    position: absolute;
+    left: 7.6em;
+    top: 4.8em;
+    font-size: 35px;
+}
+
+.parent {
+    border: 1px solid black;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: relative;
+    top: 16em;
+    left: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.child {
+    border: 1px solid black;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background-image: url('love5.avif');
+    color: rgb(10, 233, 10);
+    background-size:cover;
+    background-repeat: no-repeat;
+    
+}
+
+#n {
+    position: relative;
+    top: 90px;
+    right: 20px;
+    font-size: 21px;
+}
+
+#stick {
+    position: relative;
+    left: 40px;
+    font-size: 45px;
+    bottom: 10px;
+}
+
+.heart {
+    animation: heart 0.5s ease 0.5s infinite;
+}
+
+@keyframes heart {
+    0% { transform: scale(1, 1); }
+    50% { transform: scale(2.1, 2.1); }
+    100% { transform: scale(1, 1); }
+}
+
+.text {
+    color: red;
+}
+
+.imgs img {
+    width: 5em;
+    height: 5em;
+    position: relative;
+    z-index: 1;
+    top: -5em;
+    margin-left: 2em;
+    animation: leaf 10s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes leaf {
+    0% { transform: translateY(0) translateX(0) rotate(0deg); }
+    25% { transform: translateY(20vh) translateX(-5vw) rotate(45deg); }
+    50% { transform: translateY(40vh) translateX(5vw) rotate(-45deg); }
+    75% { transform: translateY(60vh) translateX(-5vw) rotate(45deg); }
+    100% { transform: translateY(110vh) translateX(5vw) rotate(-45deg); }
+}
+
+/* Autofill styles */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px transparent;
+    -webkit-text-fill-color: pink !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    body{
+        width: 100%;
+        height:100vh;
+        position:absolute;
+        overflow:auto;
+        top:0em;
+        left:-0.5em;
+        background-color:rgb(62, 3, 13);
+
+    }
+    .background{
+        width: 100%;
+        height: 100%;
+    }
+    .background img{
+        position: absolute;
+        width: 100%;
+        height: 106%;
+        object-fit: cover;
+        left: 0em;
+        overflow: hidden;
+    }
+    .imgs img{
+        /* top:-30em; */
+    }
+    .main {
+        width: 85%;
+        height: 22em;
+        padding: 20px;
+        bottom: 6em;
+        position:absolute;
+        top:-14em;
+        left: 1em;
+        /* margin-bottom: 1em; */
+    }
+    .leaf{
+        position: absolute;
+        top:2em;
+    }
+    input {
+        width: 40%;
+        margin-bottom: 10px;
+        position:absolute;
+        
+       
+    }
+ 
+     #sticker {
+        position: absolute;
+        top:6.2em;
+       font-size: large;
+        left: 6.5em;
+    }
+    #l2{
+        position: absolute;
+        left: 1em;
+        top:14em;
+    }
+    #l1{
+        position: absolute;
+        left: 1em;
+        top:9em;
+    }
+    #i2{
+        position: absolute;
+        right: 2.2em;
+        top:13.5em;
+    }
+    #i1{
+        position: absolute;
+        right: 2.3em;
+        top:8.5em;
+    }
+    #submit {
+        width: 100%;
+        top: 2em;
+        position: absolute;
+        top:18em;
+    }
+
+    .parent {
+        width: 14em;
+        height: 14em;
+        top: 12em;
+        left: 0;
+        margin: 0 auto;
+        margin-top: 14em;
+    }
+
+    .child {
+        width: 13em;
+        height: 13em;
+    }
+
+    #n {
+        top: 4em;
+        right: 10px;
+        font-size:4em;
+    }
+
+    #stick {
+        left: 40px;
+    }
+    .imgs img {
+        width: 3em;
+        height: 3em;
+        position: relative;
+        bottom: -8em;
+    }
+    .heart{
+        position: relative;
+        left: 2em;
+    }
+    pre {
+        font-size: 34px;
+        position: absolute;
+        top:0em;
+        left: 2em;
+    }
+    .suggestion{
+        position: absolute;
+        top:5em;
+        left: 7.5em;
+    }
+    @keyframes leaf {
+        0% { transform: translateY(0) translateX(0) rotate(0deg); }
+        20% { transform: translateY(20vh) translateX(-10vw) rotate(45deg); }
+        40% { transform: translateY(50vh) translateX(10vw) rotate(-45deg); }
+        60% { transform: translateY(80vh) translateX(-10vw) rotate(35deg); }
+        80% { transform: translateY(100vh) translateX(10vw) rotate(-45deg); }
+        100% { transform: translateY(140vh) translateX(-10vw) rotate(45deg); }
+    }
+   
+}
+
+@media (max-width: 480px) {
+    body{
+        position: fixed;
+        overflow:hidden;
+        /* display: none; */
+        /* border: 2px solid green; */
+       /* border: 2px solid green; */
+       
+    }
+    /* .background img{
+        top:0em;
+    } */
+    .main{
+        /* top:-8em; */
+        left: 0.5em;
+        top:-16em;
+    }
+    .imgs img{
+        top:-28em;
+    }
+    pre {
+        font-size: 34px;
+    }
+
+    label {
+        font-size: 18px;
+    }
+
+    input {
+        font-size: 18px;
+        left: 10em;
+    }
+
+    #submit {
+        font-size: 18px;
+    }
+
+    .suggestion {
+        font-size: 14px;
+    }
+
+    #sticker {
+        font-size: 28px;
+    }
+
+    #stick {
+        font-size: 35px;
+    }
+
+    #n {
+        font-size: 18px;
+    }
+}
